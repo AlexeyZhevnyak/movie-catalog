@@ -10,7 +10,7 @@ export class Movie {
   private _budget: number;
   private _revenue: number;
   private _genres: string[];
-  private _runtme: number;
+  private _runtime: number;
 
 
   constructor(id: number, title: string, tagline: string, vote_average: number, vote_count: number, release_date: Date, poster_path: string, overview: string, budget: number, revenue: number, genres: string[], runtme: number) {
@@ -25,8 +25,10 @@ export class Movie {
     this._budget = budget;
     this._revenue = revenue;
     this._genres = genres;
-    this._runtme = runtme;
+    this._runtime = runtme;
   }
+
+
 
 
   get id(): number {
@@ -117,11 +119,11 @@ export class Movie {
     this._genres = value;
   }
 
-  get runtme(): number {
-    return this._runtme;
+  get runtime(): number {
+    return this._runtime;
   }
 
-  set runtme(value: number) {
-    this._runtme = value;
+  set runtime(value: number) {
+    this._runtime = value;
   }
 }

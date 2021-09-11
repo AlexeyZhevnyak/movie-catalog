@@ -1,0 +1,10 @@
+<div class="menu-wrapper">
+  <div class="genres">
+    <div *ngFor="let genre of genres" (click)="sendGenre(genre)">{{genre}}</div>
+  </div>
+  <div class="select-sort">
+    <select [(ngModel)]="sortFunction" (click)="sendSortFunction(sortFunction)">
+      <option *ngFor="let item of sortFunctions" [ngValue]="item.value">{{item.title}}</option>
+    </select>
+  </div>
+</div>

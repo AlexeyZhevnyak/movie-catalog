@@ -1,3 +1,6 @@
+<app-menu (filterEmitter)="filterMovies($event)" (sortFieldEmitter)="sortMovies($event)"></app-menu>
+<p>{{moviesToShow.length}} movies found</p>
+
 <div class="film-cards">
-  <app-film-card *ngFor="let i of movies" [movie]="i"></app-film-card>
+  <app-film-card *ngFor="let movie of moviesToShow" [movie]="movie"></app-film-card>
 </div>

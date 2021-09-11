@@ -1,0 +1,17 @@
+<div class="details-wrapper">
+  <img src="{{movie.poster_path}}" alt="">
+  <div class="rows">
+    <div class="line-1">
+      <h1>{{movie.title}}</h1>
+      <div class="vote">{{movie.vote_average}}</div>
+    </div>
+    <div>{{movie.tagline}}</div>
+    <div class="line-4">
+      <span>{{movie.release_date | date : "YYYY"}}</span>
+      <span class="runtime">{{movie.runtime}} min</span>
+    </div>
+    <div>
+      <p>{{movie.overview}}</p>
+    </div>
+  </div>
+</div>

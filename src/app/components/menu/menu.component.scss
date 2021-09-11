@@ -1,0 +1,29 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(42, 42, 42);
+}
+
+
+select {
+  background-color: rgb(23, 23, 23);
+  border: none;
+  outline: none;
+}
+option{
+  border: none;
+  outline: none;
+}
+
+.genres div, .select-sort {
+  padding: 20px;
+}
+
+.genres {
+  display: flex;
+}
+
+.genres div:hover {
+  border-bottom: 1px solid red;
+  cursor: pointer
+}
