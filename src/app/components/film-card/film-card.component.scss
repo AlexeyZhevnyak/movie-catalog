@@ -1,3 +1,8 @@
+.wrapper{
+  height: 20em;
+  overflow: hidden;
+}
+
 .poster {
   width: 375px;
   height: 488px;
@@ -8,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-
+  align-items: center;
 }
 
 .film-card{
@@ -16,4 +21,13 @@
 }
 .year{
   border: 1px solid white;
+  padding: 5px 15px;
+  font-weight: 100;
+}
+.movie-details p{
+  font-weight: 100;
+  font-size: 10pt;
+}
+.movie-title{
+  font-weight: 300;
 }

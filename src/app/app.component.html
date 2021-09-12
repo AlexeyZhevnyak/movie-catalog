@@ -1,3 +1,7 @@
-<app-find-movie *ngIf="condition"></app-find-movie>
-<app-movie-details *ngIf="!condition"></app-movie-details>
+<div class="wrapper">
+  <div class="blur">
+    <app-find-movie *ngIf="condition"></app-find-movie>
+    <app-movie-details *ngIf="!condition"></app-movie-details>
+  </div>
+</div>
 <app-main></app-main>

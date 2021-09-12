@@ -1,7 +1,7 @@
 .menu-wrapper {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(42, 42, 42);
+  border-bottom: 3px solid rgb(42, 42, 42);
 }
 
 
@@ -24,6 +24,10 @@ option{
 }
 
 .genres div:hover {
-  border-bottom: 1px solid red;
+  border-bottom: 3px solid red;
   cursor: pointer
+}
+.sort-text{
+  font-weight: 100;
+  margin-right: 10px;
 }

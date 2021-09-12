@@ -2,7 +2,7 @@
      <div class="poster" [style.background-image]="'url(' + movie.poster_path + ')'"></div>
      <div class="movie-details">
        <div class="title-year">
-         <div>{{movie.title}}</div>
+         <div class="movie-title">{{movie.title}}</div>
          <div class="year">{{movie.release_date | date:'YYYY'}}</div>
        </div>
        <p>{{movie.genres}}</p>

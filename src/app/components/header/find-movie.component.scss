@@ -1,0 +1,70 @@
+.wrapper{
+  height: 20em;
+  background: rgba(0, 0, 0, 0.7);
+}
+.line{
+  display: flex;
+}
+.first{
+  justify-content: space-between;
+  padding: 20px 30px 0;
+}
+
+.first button{
+
+  font-size: 15pt;
+  font-weight: 500;
+  background: rgba(80,80, 80, 0.5);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+
+  cursor: pointer;
+}
+
+.first button span{
+  color: #f65261;
+}
+.third{
+  justify-content: center;
+  margin: 50px 0;
+}
+
+
+.third input{
+  color: #f65261;
+  width: 40%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(42,42,42);
+  opacity: 80%;
+  padding-left: 20px;
+  font-weight: 400;
+}
+
+.third button{
+  background-color: #f65261;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 80px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.find-text{
+  font-size: 32pt;
+  font-weight: 100;
+  padding-left: 420px;
+}
+.netflix-title, .netflix{
+  color: #f65261;
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.netflix{
+  font-weight: 600;
+}

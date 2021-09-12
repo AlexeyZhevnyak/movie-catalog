@@ -1,10 +1,11 @@
 <div class="menu-wrapper">
   <div class="genres">
-    <div *ngFor="let genre of genres" (click)="sendGenre(genre)">{{genre}}</div>
+    <div *ngFor="let genre of genres" (click)="sendGenre(genre)">{{genre | uppercase}}</div>
   </div>
   <div class="select-sort">
+    <span class="sort-text">SORT BY</span>
     <select [(ngModel)]="sortFunction" (click)="sendSortFunction(sortFunction)">
-      <option *ngFor="let item of sortFunctions" [ngValue]="item.value">{{item.title}}</option>
+      <option *ngFor="let item of sortFunctions" [ngValue]="item.value">{{item.title | uppercase}}</option>
     </select>
   </div>
 </div>

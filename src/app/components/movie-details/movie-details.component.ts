@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Movie} from "../../model/movie/movie";
 import {MovieDetailsService} from "../../services/movieDetails/movie-details.service";
+import {ConditionService} from "../../services/condition/condition.service";
 
 @Component({
   selector: 'app-movie-details',
@@ -10,7 +11,7 @@ import {MovieDetailsService} from "../../services/movieDetails/movie-details.ser
 export class MovieDetailsComponent implements OnInit {
   public movie !: Movie;
 
-  constructor(private movieDetService: MovieDetailsService) {
+  constructor(private movieDetService: MovieDetailsService, private condition : ConditionService) {
     console.log("loikj1");
     this.movieDetService.subscribe(
       (v: Movie) => {
@@ -26,4 +27,7 @@ export class MovieDetailsComponent implements OnInit {
 
   }
 
+  changeCondition() {
+    this.condition.emit(true);
+  }
 }
