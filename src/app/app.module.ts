@@ -12,6 +12,9 @@ import {FormsModule} from "@angular/forms";
 import {MenuComponent} from './components/menu/menu.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
+import {DottedMenuComponent} from './components/dotted-menu/dotted-menu.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -20,15 +23,18 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
     FilmCardComponent,
     FindMovieComponent,
     MenuComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    DottedMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

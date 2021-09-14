@@ -12,14 +12,8 @@ export class MovieDetailsComponent implements OnInit {
   public movie !: Movie;
 
   constructor(private movieDetService: MovieDetailsService, private condition : ConditionService) {
-    console.log("loikj1");
     this.movieDetService.subscribe(
-      (v: Movie) => {
-        console.log("loikj3");
-
-        this.movie = v;
-        console.log("loikj2")
-      }
+      (m: Movie) => this.movie = m
     )
   }
 

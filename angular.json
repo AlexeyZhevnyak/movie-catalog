@@ -28,6 +28,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/clipart2112419.png",
               "src/assets"
             ],
             "styles": [

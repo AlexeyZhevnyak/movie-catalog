@@ -1,7 +1,4 @@
-.wrapper{
-  height: 20em;
-  overflow: hidden;
-}
+
 
 .poster {
   width: 375px;
@@ -17,7 +14,9 @@
 }
 
 .film-card{
+  position: relative;
   margin: 70px;
+  z-index: 37;
 }
 .year{
   border: 1px solid white;
@@ -31,3 +30,19 @@
 .movie-title{
   font-weight: 300;
 }
+app-dotted-menu{
+  visibility: hidden;
+  position: absolute;
+  background-color: rgb(23,23,32);
+  margin-left: 330px;
+  margin-top: 20px;
+  border-radius: 15px;
+
+}
+*:hover{
+  app-dotted-menu{
+    visibility: visible;
+  }
+
+}
+
