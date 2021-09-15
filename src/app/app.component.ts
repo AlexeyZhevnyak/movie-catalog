@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ConditionService} from "./services/condition/condition.service";
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,13 @@ import {ConditionService} from "./services/condition/condition.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'movie-catalog';
-  condition: boolean = true;
 
 
-  constructor(private condService: ConditionService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.condService.subscribe((e: boolean) => this.condition = e);
+
   }
 
 }

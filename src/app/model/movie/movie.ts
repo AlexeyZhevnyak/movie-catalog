@@ -126,4 +126,7 @@ export class Movie {
   set runtime(value: number) {
     this._runtime = value;
   }
+  setGenres(value: string[]):void{
+    this._genres = value;
+  }
 }
