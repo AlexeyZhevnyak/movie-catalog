@@ -1,4 +1,13 @@
 # MovieCatalog
+Project layout  
+https://projects.invisionapp.com/share/F9VXQ7IMZGY#/screens/406802250
+Tasks:
+1. Film page implementation 
+2. Implementation of adding a movie 
+3. Movie details page 
+4. Implementation of movie edit(another page)  
+5. Implementation of movie delete 
+6. Tests 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
