@@ -1,6 +1,6 @@
 # MovieCatalog
 Project layout  
-https://projects.invisionapp.com/share/F9VXQ7IMZGY#/screens/406802250
+https://projects.invisionapp.com/share/F9VXQ7IMZGY#/screens/406802250  
 Tasks:
 1. Film page implementation 
 2. Implementation of adding a movie 
