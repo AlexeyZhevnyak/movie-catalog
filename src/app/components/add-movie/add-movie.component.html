@@ -1,13 +1,14 @@
 <div class="container">
   <div class="title-form">ADD MOVIE</div>
-  <form method="post" >
+  <form method="post" #addForm>
     <div>
       <label>TITLE</label>
       <input type="text" placeholder="Title here" [(ngModel)]="obj.title" name="title">
     </div>
     <div>
       <label>RELEASE DATE</label>
-      <input onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Select date" name="date" [(ngModel)]="obj.release_date">
+      <input onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Select date" name="date"
+             [(ngModel)]="obj.release_date">
     </div>
     <div>
       <label>MOVIE URL</label>
@@ -16,7 +17,7 @@
     <div>
       <label>GENRE</label>
       <select multiple [(ngModel)]="obj.genres" name="genres">
-        <option *ngFor="let genre of getGenres().slice(1, getGenres().length)" >{{genre}}</option>
+        <option *ngFor="let genre of genresService.genres.slice(1, genresService.genres.length)">{{genre}}</option>
       </select>
     </div>
     <div>
@@ -27,9 +28,25 @@
       <label>RUNTIME</label>
       <input type="text" placeholder="Runtime here" [(ngModel)]="obj.runtime" name="run">
     </div>
+    <div>
+      <label>REVENUE</label>
+      <input type="text" placeholder="Revenue here" [(ngModel)]="obj.revenue" name="rev">
+    </div>
+    <div>
+      <label>TAGLINE</label>
+      <input type="text" placeholder="Tagline here" [(ngModel)]="obj.tagline" name="tag">
+    </div>
+    <div>
+      <label>VOTE AVERAGE</label>
+      <input type="text" placeholder="Vote average here" [(ngModel)]="obj.vote_average" name="voteA">
+    </div>
+    <div>
+      <label>VOTE COUNT</label>
+      <input type="text" placeholder="Vote count here" [(ngModel)]="obj.vote_count" name="voteC">
+    </div>
     <div class="buttons">
-      <button (click)="ter()">RESET</button>
-      <input type="submit" value="Submit" (click)="subm()">
+      <button (click)="clearAll()">RESET</button>
+      <input type="submit" value="Submit" (click)="submit()">
     </div>
   </form>
 </div>

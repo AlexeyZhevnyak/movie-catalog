@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {GenresHolderService} from "../../services/genres/genres-holder.service";
-import {Movie} from "../../model/movie/movie";
 import {MoviesService} from "../../services/movies/movies.service";
 
 @Component({
@@ -9,52 +8,43 @@ import {MoviesService} from "../../services/movies/movies.service";
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
-  public movie !: Movie;
-  public genres: string[] = this.genresService.genres;
-  selected: string[] = [];
-  title: string = ' ';
-  release_date!: Date;
-  poster_path: string = '';
-  overview: string = '';
-  runtime: number = 0;
+  @ViewChild("addForm") addForm!: ElementRef;
   obj: any = {
     "title": "",
     "genres": [],
-    "runtime": null,
+    "runtime": 0,
     "overview": "",
     "poster_path": "",
     "release_date": "",
 
-    "tagline": "aa",
+    "tagline": "",
     "vote_average": 0,
     "vote_count": 0,
 
-    "budget": 150000000,
-    "revenue": 287594577,
+    "budget": 0,
+    "revenue": 0,
 
   }
 
-  constructor(private genresService: GenresHolderService, private movSer: MoviesService) {
+  constructor(public genresService: GenresHolderService, private movSer: MoviesService) {
   }
 
   ngOnInit(): void {
 
   }
 
-  getGenres(): String[] {
 
-    return this.genres;
-  }
-
-  ter() {
-
-  }
-
-  subm() {
-    console.log("tewe");
+  submit() {
     this.obj.runtime = Number(this.obj.runtime);
-    this.movSer.addMovie(this.obj).subscribe(
-      e => console.log(e)
-    )
+    this.obj.vote_average = Number(this.obj.vote_average);
+    this.obj.vote_count = Number(this.obj.vote_count);
+    this.obj.revenue = Number(this.obj.revenue);
+    this.movSer.addMovie(this.obj).subscribe(e =>
+      console.log(e));
+    window.location.reload();
+  }
+
+  clearAll() {
+    this.addForm.nativeElement.reset();
   }
 }

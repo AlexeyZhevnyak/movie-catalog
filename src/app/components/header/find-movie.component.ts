@@ -20,11 +20,4 @@ export class FindMovieComponent implements OnInit {
     this.findService.emit(this.movieTitle)
   }
 
-  redirectToAddMoviePage() {
-    // this.rout.
-  }
-
-  test() {
-    console.log("click");
-  }
 }
