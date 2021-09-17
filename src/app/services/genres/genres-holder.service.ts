@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class GenresHolderService {
-  private _genres: string[] = [
+  public genres: string[] = [
     "All",
     "Drama",
     "Romance",
@@ -20,8 +20,4 @@ export class GenresHolderService {
   constructor() {
   }
 
-
-  get genres(): string[] {
-    return this._genres;
-  }
 }

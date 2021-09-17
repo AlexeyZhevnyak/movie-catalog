@@ -9,10 +9,10 @@ import {MovieDetailsService} from "../../services/movieDetails/movie-details.ser
 
 @Component({
   selector: 'app-movie-cards',
-  templateUrl: './movie-cards.component.html',
-  styleUrls: ['./movie-cards.component.scss']
+  templateUrl: './movie-handler.component.html',
+  styleUrls: ['./movie-handler.component.scss']
 })
-export class MovieCardsComponent implements OnInit {
+export class MovieHandlerComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
 
@@ -36,12 +36,12 @@ export class MovieCardsComponent implements OnInit {
 
   }
 
-  filterMovies(event: string): void {
-    if (event === "All") {
+  filterMovies(filter: string): void {
+    if (filter === "All") {
       this.moviesToShow = this.movies;
       return
     }
-    this.moviesToShow = this.movies.filter(e => e.genres.indexOf(event) >= 0);
+    this.moviesToShow = this.movies.filter(e => e.genres.indexOf(filter) >= 0);
   }
 
   sortMovies(field: string) {

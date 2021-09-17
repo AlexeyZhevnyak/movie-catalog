@@ -12,8 +12,6 @@ export class MovieDetailsComponent {
   constructor(public movieDetService: MovieDetailsService, private condition: HeaderSwapService) {
   }
 
-
-
   swapToFindMovie() {
     this.condition.swapHeaderCondition$.next(true);
   }
