@@ -1,9 +1,6 @@
-
-
 .poster {
-  width: 375px;
-  height: 488px;
-  background-size: cover;
+  width: 380px;
+  height: 100%;
 }
 
 .title-year {
@@ -24,10 +21,12 @@
   padding: 5px 15px;
   font-weight: 100;
 }
-.movie-details p{
+
+.movie-details p {
   font-weight: 100;
   font-size: 10pt;
 }
+
 .movie-title {
   font-weight: 300;
 }
