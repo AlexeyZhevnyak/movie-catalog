@@ -4,6 +4,8 @@ import {Movie} from "../../model/movie/movie";
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
 import {GenresHolderService} from "../../services/genres/genres-holder.service";
 import {SortService} from "../../services/sortFunctions/sort.service";
+import {HeaderSwapService} from "../../services/condition/header-swap.service";
+import {MovieDetailsService} from "../../services/movieDetails/movie-details.service";
 
 @Component({
   selector: 'app-movie-cards',
@@ -14,7 +16,8 @@ export class MovieCardsComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
 
-  constructor(private moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService) {
+  constructor(private moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService,
+              private headerSwap: HeaderSwapService, private movieDetails: MovieDetailsService) {
   }
 
   ngOnInit(): void {
@@ -43,5 +46,13 @@ export class MovieCardsComponent implements OnInit {
 
   sortMovies(field: string) {
     this.moviesToShow.sort((a: any, b: any) => a[field] - b[field]);
+  }
+
+  sendMovieDetailsToHeader(movie: Movie) {
+    this.movieDetails.movieDetailsSubject$.next(movie);
+  }
+
+  swapHeader() {
+    this.headerSwap.swapHeaderCondition$.next(false);
   }
 }

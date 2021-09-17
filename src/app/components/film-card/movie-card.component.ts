@@ -1,7 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Movie} from "../../model/movie/movie";
-import {MovieDetailsService} from "../../services/movieDetails/movie-details.service";
-import {HeaderSwapService} from "../../services/condition/header-swap.service";
 
 @Component({
   selector: 'app-movie-card',
@@ -10,13 +8,13 @@ import {HeaderSwapService} from "../../services/condition/header-swap.service";
 })
 export class MovieCardComponent {
 
-  @Input() public movie!: Movie;
+  @Input() movie!: Movie;
+  @Output() movieEmitter = new EventEmitter<Movie>();
 
-  constructor(private movieDetService: MovieDetailsService, private condService: HeaderSwapService) {
+  constructor() {
   }
 
-  sendMovieDetailsForHeader() {
-    this.condService.swapHeaderCondition$.next(false);
-    this.movieDetService.movieDetailsSubject$.next(this.movie);
+  sendMovie() {
+    this.movieEmitter.emit(this.movie);
   }
 }
