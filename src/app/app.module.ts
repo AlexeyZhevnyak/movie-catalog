@@ -9,7 +9,7 @@ import {MoviesService} from "./services/movies/movies.service";
 import {MovieCardComponent} from './components/film-card/movie-card.component';
 import {FindMovieComponent} from './components/header/find-movie.component';
 import {FormsModule} from "@angular/forms";
-import {MenuComponent} from './components/menu/menu.component';
+import {FilterSortMenuComponent} from './components/menu/filter-sort-menu.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
 import {MovieCardMenuComponent} from './components/dotted-menu/movie-card-menu.component';
@@ -22,7 +22,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     MovieCardsComponent,
     MovieCardComponent,
     FindMovieComponent,
-    MenuComponent,
+    FilterSortMenuComponent,
     MovieDetailsComponent,
     MovieCardMenuComponent
   ],

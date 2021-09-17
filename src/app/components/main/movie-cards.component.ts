@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies/movies.service";
 import {Movie} from "../../model/movie/movie";
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
+import {GenresHolderService} from "../../services/genres/genres-holder.service";
+import {SortService} from "../../services/sortFunctions/sort.service";
 
 @Component({
   selector: 'app-movie-cards',
@@ -11,9 +13,8 @@ import {FindMovieService} from "../../services/findMovie/find-movie.service";
 export class MovieCardsComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
-  private movieToFind: string = "";
 
-  constructor(private moviesService: MoviesService, private findService: FindMovieService) {
+  constructor(private moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService) {
   }
 
   ngOnInit(): void {

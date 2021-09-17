@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {MenuComponent} from './menu.component';
+import {FilterSortMenuComponent} from './filter-sort-menu.component';
 
 describe('MenuComponent', () => {
-  let component: MenuComponent;
-  let fixture: ComponentFixture<MenuComponent>;
+  let component: FilterSortMenuComponent;
+  let fixture: ComponentFixture<FilterSortMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuComponent ]
+      declarations: [FilterSortMenuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuComponent);
+    fixture = TestBed.createComponent(FilterSortMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,6 @@
-<app-menu (filterEmitter)="filterMovies($event)" (sortFieldEmitter)="sortMovies($event)"></app-menu>
+<app-filter-sort-menu [options]="sortService.sortFields" [filters]="genreHolder.genres"
+                      (filterEmitter)="filterMovies($event)"
+                      (selectViewEmitter)="sortMovies($event)"></app-filter-sort-menu>
 <p>{{moviesToShow.length}} <span class="after-count-text">movies found</span></p>
 
 <div class="film-cards">

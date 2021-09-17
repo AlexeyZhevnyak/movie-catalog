@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {ISelected} from "./iselected";
+import {SelectOptions} from "./selectOptions";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SortService {
-  public sortFields: ISelected[] = [
+  public sortFields: SelectOptions[] = [
     {
       title: "Votes",
       field: "vote_average"
