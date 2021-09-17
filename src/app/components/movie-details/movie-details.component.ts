@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Movie} from "../../model/movie/movie";
 import {MovieDetailsService} from "../../services/movieDetails/movie-details.service";
 import {HeaderSwapService} from "../../services/condition/header-swap.service";
@@ -8,7 +8,7 @@ import {HeaderSwapService} from "../../services/condition/header-swap.service";
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.scss']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent {
   public movie !: Movie;
 
   constructor(public movieDetService: MovieDetailsService, private condition: HeaderSwapService) {
@@ -17,11 +17,9 @@ export class MovieDetailsComponent implements OnInit {
     // )
   }
 
-  ngOnInit(): void {
 
-  }
 
   changeCondition() {
-    this.condition.swapCondition$.next(true);
+    this.condition.swapHeaderCondition$.next(true);
   }
 }

@@ -13,12 +13,13 @@
   align-items: center;
 }
 
-.film-card{
+:host {
   position: relative;
   margin: 70px;
   z-index: 37;
 }
-.year{
+
+.year {
   border: 1px solid white;
   padding: 5px 15px;
   font-weight: 100;

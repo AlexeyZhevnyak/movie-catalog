@@ -15,14 +15,13 @@ export class MenuComponent implements OnInit {
   public sortFields: ISelected[] = [];
   public sortField!: string;
 
-
   constructor(private genreHolder: GenresHolderService, private sortService: SortService) {
   }
 
   ngOnInit(): void {
+    console.log("ahaaha")
     this.genres = this.genreHolder.genres;
     this.sortFields = this.sortService.sortFields;
-
     this.sortField = this.sortFields[0].field;
   }
 

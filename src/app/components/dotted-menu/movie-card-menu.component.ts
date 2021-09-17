@@ -1,11 +1,11 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-movie-card-menu',
   templateUrl: './movie-card-menu.component.html',
   styleUrls: ['./movie-card-menu.component.scss']
 })
-export class MovieCardMenuComponent implements OnInit {
+export class MovieCardMenuComponent {
   @ViewChild("header_burger") header_burger !: ElementRef;
 
   @ViewChild("header_menu") header_menu !: ElementRef;
@@ -16,9 +16,7 @@ export class MovieCardMenuComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
 
-  }
 
   change() {
     if (!this.isMark) {

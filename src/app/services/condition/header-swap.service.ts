@@ -5,7 +5,7 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class HeaderSwapService {
-  public swapCondition$ = new BehaviorSubject<boolean>(true);
+  public swapHeaderCondition$ = new BehaviorSubject<boolean>(true);
 
 
   constructor() {

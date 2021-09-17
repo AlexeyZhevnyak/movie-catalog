@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {HeaderSwapService} from "./services/condition/header-swap.service";
 
 import {Observable} from "rxjs";
@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'movie-catalog';
   // condition: boolean = true;
   condition !: Observable<boolean>
@@ -19,9 +19,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
 
-    // this.condService.subscribe((e: boolean) => this.condition = e);
-  }
 
 }

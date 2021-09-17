@@ -1,4 +1,4 @@
-.menu-wrapper {
+:host {
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid rgb(42, 42, 42);
@@ -9,8 +9,10 @@ select {
   background-color: rgb(23, 23, 23);
   border: none;
   outline: none;
+
 }
-option{
+
+option {
   border: none;
   outline: none;
 }
@@ -27,7 +29,12 @@ option{
   border-bottom: 3px solid red;
   cursor: pointer
 }
-.sort-text{
+
+.sort-text {
   font-weight: 100;
   margin-right: 10px;
+}
+
+.select-sort {
+  z-index: 20;
 }

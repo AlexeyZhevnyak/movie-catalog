@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
 
 
@@ -7,14 +7,13 @@ import {FindMovieService} from "../../services/findMovie/find-movie.service";
   templateUrl: './find-movie.component.html',
   styleUrls: ['./find-movie.component.scss']
 })
-export class FindMovieComponent implements OnInit {
+export class FindMovieComponent {
   public movieTitle: string = "";
 
 
-  constructor(private findService : FindMovieService) { }
-
-  ngOnInit(): void {
+  constructor(private findService: FindMovieService) {
   }
+
 
   sendMovieTitle() {
     this.findService.findedMovieTitle$.next(this.movieTitle)
