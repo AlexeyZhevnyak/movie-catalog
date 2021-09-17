@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Movie} from "../../model/movie/movie";
 import {MovieDetailsService} from "../../services/movieDetails/movie-details.service";
 import {HeaderSwapService} from "../../services/condition/header-swap.service";
 
@@ -9,17 +8,13 @@ import {HeaderSwapService} from "../../services/condition/header-swap.service";
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent {
-  public movie !: Movie;
 
   constructor(public movieDetService: MovieDetailsService, private condition: HeaderSwapService) {
-    // this.movieDetService.subscribe(
-    //   (m: Movie) => this.movie = m
-    // )
   }
 
 
 
-  changeCondition() {
+  swapToFindMovie() {
     this.condition.swapHeaderCondition$.next(true);
   }
 }

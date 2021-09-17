@@ -3,7 +3,7 @@
     <div class="netflix-title">
       <span class="netflix">netflix</span>roulette
     </div>
-    <div class="back-icon" (click)="changeCondition()"></div>
+    <div class="back-icon" (click)="swapToFindMovie()"></div>
   </div>
   <div class="details-wrapper">
     <img src="{{(movieDetService.movieDetailsSubject$ | async)?.poster_path}}" alt="">
