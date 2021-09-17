@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("ahaaha")
+    console.log("ahaaha")
     this.genres = this.genreHolder.genres;
     this.sortFields = this.sortService.sortFields;
     this.sortField = this.sortFields[0].field;
