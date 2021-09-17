@@ -16,36 +16,23 @@ export class MovieHandlerComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
 
-  constructor(private moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService,
+  constructor(public moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService,
               private headerSwap: HeaderSwapService, private movieDetails: MovieDetailsService) {
   }
 
   ngOnInit(): void {
-    this.moviesService.moviesDtoObs
-      .subscribe(value => {
-        this.movies = value.data.map(element => {
-          element.release_date = new Date(element.release_date).getTime();
-          return element;
-        });
-        this.moviesToShow = this.movies;
-      });
-
     this.findService.findedMovieTitle$.subscribe(movieTitle => {
-      this.moviesToShow = this.moviesToShow.filter(e => e.title === movieTitle);
+      this.moviesService.findMovie(movieTitle);
     });
 
   }
 
   filterMovies(filter: string): void {
-    if (filter === "All") {
-      this.moviesToShow = this.movies;
-      return
-    }
-    this.moviesToShow = this.movies.filter(e => e.genres.indexOf(filter) >= 0);
+    this.moviesService.filterMovies(filter);
   }
 
   sortMovies(field: string) {
-    this.moviesToShow.sort((a: any, b: any) => a[field] - b[field]);
+    this.moviesService.sortMovies(field);
   }
 
   sendMovieDetailsToHeader(movie: Movie) {

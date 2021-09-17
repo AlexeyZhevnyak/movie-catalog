@@ -1,9 +1,10 @@
 <app-filter-sort-menu [options]="sortService.sortFields" [filters]="genreHolder.genres"
                       (filterEmitter)="filterMovies($event)"
                       (selectViewEmitter)="sortMovies($event)"></app-filter-sort-menu>
-<p>{{moviesToShow.length}} <span class="after-count-text">movies found</span></p>
+<p>{{(moviesService.moviesObs | async)?.length}} <span class="after-count-text">movies found</span></p>
 
 <div class="film-cards">
-  <app-movie-card *ngFor="let movie of moviesToShow" [movie]="movie" (movieEmitter)="sendMovieDetailsToHeader($event)"
+  <app-movie-card *ngFor="let movie of (moviesService.moviesObs| async)" [movie]="movie"
+                  (movieEmitter)="sendMovieDetailsToHeader($event)"
                   (click)="swapHeader()"></app-movie-card>
 </div>
