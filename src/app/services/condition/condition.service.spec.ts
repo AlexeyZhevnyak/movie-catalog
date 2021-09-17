@@ -1,13 +1,13 @@
 import {TestBed} from '@angular/core/testing';
 
-import {ConditionService} from './condition.service';
+import {HeaderSwapService} from './header-swap.service';
 
 describe('ConditionService', () => {
-  let service: ConditionService;
+  let service: HeaderSwapService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ConditionService);
+    service = TestBed.inject(HeaderSwapService);
   });
 
   it('should be created', () => {

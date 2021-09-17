@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
 
+
 @Component({
   selector: 'app-find-movie',
   templateUrl: './find-movie.component.html',
@@ -16,6 +17,7 @@ export class FindMovieComponent implements OnInit {
   }
 
   sendMovieTitle() {
-    this.findService.emit(this.movieTitle)
+    this.findService.findedMovieTitle$.next(this.movieTitle)
   }
+
 }

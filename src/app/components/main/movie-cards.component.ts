@@ -4,11 +4,11 @@ import {Movie} from "../../model/movie/movie";
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-movie-cards',
+  templateUrl: './movie-cards.component.html',
+  styleUrls: ['./movie-cards.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MovieCardsComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
   private movieToFind: string = "";
@@ -19,12 +19,15 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.moviesService.moviesDtoObs
       .subscribe(value => {
-        this.movies = value.data;
+        this.movies = value.data.map(element => {
+          element.release_date = new Date(element.release_date).getTime();
+          return element;
+        });
         this.moviesToShow = this.movies;
       });
 
-    this.findService.subscribe((movie: string) => {
-      this.moviesToShow = this.moviesToShow.filter(e => e.title === movie);
+    this.findService.findedMovieTitle$.subscribe(movieTitle => {
+      this.moviesToShow = this.moviesToShow.filter(e => e.title === movieTitle);
     });
 
   }
@@ -37,8 +40,7 @@ export class MainComponent implements OnInit {
     this.moviesToShow = this.movies.filter(e => e.genres.indexOf(event) >= 0);
   }
 
-  sortMovies(event: (a: Movie, b: Movie) => number) {
-    console.log(event);
-    this.moviesToShow.sort(event);
+  sortMovies(field: string) {
+    this.moviesToShow.sort((a: any, b: any) => a[field] - b[field]);
   }
 }

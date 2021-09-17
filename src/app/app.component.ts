@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ConditionService} from "./services/condition/condition.service";
+import {HeaderSwapService} from "./services/condition/header-swap.service";
+
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -8,14 +10,18 @@ import {ConditionService} from "./services/condition/condition.service";
 })
 export class AppComponent implements OnInit {
   title = 'movie-catalog';
-  condition: boolean = true;
+  // condition: boolean = true;
+  condition !: Observable<boolean>
 
+  constructor(public condService: HeaderSwapService) {
+    // this.condService.emit(true);
+    // this.condService.condition$.next(true)
 
-  constructor(private condService: ConditionService) {
   }
 
   ngOnInit(): void {
-    this.condService.subscribe((e: boolean) => this.condition = e);
+
+    // this.condService.subscribe((e: boolean) => this.condition = e);
   }
 
 }

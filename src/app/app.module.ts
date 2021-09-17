@@ -3,28 +3,28 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainComponent} from './components/main/main.component';
+import {MovieCardsComponent} from './components/main/movie-cards.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MoviesService} from "./services/movies/movies.service";
-import {FilmCardComponent} from './components/film-card/film-card.component';
+import {MovieCardComponent} from './components/film-card/movie-card.component';
 import {FindMovieComponent} from './components/header/find-movie.component';
 import {FormsModule} from "@angular/forms";
 import {MenuComponent} from './components/menu/menu.component';
 import {MovieDetailsComponent} from './components/movie-details/movie-details.component';
 
-import {DottedMenuComponent} from './components/dotted-menu/dotted-menu.component';
+import {MovieCardMenuComponent} from './components/dotted-menu/movie-card-menu.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    FilmCardComponent,
+    MovieCardsComponent,
+    MovieCardComponent,
     FindMovieComponent,
     MenuComponent,
     MovieDetailsComponent,
-    DottedMenuComponent
+    MovieCardMenuComponent
   ],
   imports: [
     BrowserModule,

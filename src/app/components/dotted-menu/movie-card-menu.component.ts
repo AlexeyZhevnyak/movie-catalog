@@ -1,11 +1,11 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-dotted-menu',
-  templateUrl: './dotted-menu.component.html',
-  styleUrls: ['./dotted-menu.component.scss']
+  selector: 'app-movie-card-menu',
+  templateUrl: './movie-card-menu.component.html',
+  styleUrls: ['./movie-card-menu.component.scss']
 })
-export class DottedMenuComponent implements OnInit {
+export class MovieCardMenuComponent implements OnInit {
   @ViewChild("header_burger") header_burger !: ElementRef;
 
   @ViewChild("header_menu") header_menu !: ElementRef;

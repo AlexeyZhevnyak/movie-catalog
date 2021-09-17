@@ -1,6 +1,6 @@
 
-<div class="film-card" (click)="sendMovieDetails()">
-  <app-dotted-menu></app-dotted-menu>
+<div class="film-card" (click)="sendMovieDetailsForHeader()">
+  <app-movie-card-menu></app-movie-card-menu>
   <div class="poster" [style.background-image]="'url(' + movie.poster_path + ')'"></div>
   <div class="movie-details">
     <div class="title-year">

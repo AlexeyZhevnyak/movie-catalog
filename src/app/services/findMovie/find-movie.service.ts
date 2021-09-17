@@ -1,20 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Subject, Subscription} from "rxjs";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FindMovieService {
-  private subject$ = new Subject();
+  public findedMovieTitle$ = new Subject<string>();
 
   constructor() {
-  }
-
-  emit(movieTitle: string) {
-    this.subject$.next(movieTitle);
-  }
-
-  subscribe(action: any): Subscription {
-    return this.subject$.subscribe(action);
   }
 }

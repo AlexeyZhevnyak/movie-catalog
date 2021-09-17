@@ -4,8 +4,8 @@
   </div>
   <div class="select-sort">
     <span class="sort-text">SORT BY</span>
-    <select [(ngModel)]="sortFunction" (click)="sendSortFunction(sortFunction)">
-      <option *ngFor="let item of sortFunctions" [ngValue]="item.value">{{item.title | uppercase}}</option>
+    <select [(ngModel)]="sortField" (click)="sendSortFunction(sortField)">
+      <option *ngFor="let item of sortFields" [ngValue]="item.field">{{item.title | uppercase}}</option>
     </select>
   </div>
 </div>

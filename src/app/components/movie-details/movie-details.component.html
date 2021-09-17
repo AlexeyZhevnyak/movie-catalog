@@ -3,23 +3,22 @@
     <div class="netflix-title">
       <span class="netflix">netflix</span>roulette
     </div>
-  <div class="back-icon" (click)="changeCondition()"></div>
-<!--    <i class="fas fa-search" (click)="changeCondition()">&#f002</i>-->
+    <div class="back-icon" (click)="changeCondition()"></div>
   </div>
   <div class="details-wrapper">
-    <img src="{{movie.poster_path}}" alt="">
+    <img src="{{(movieDetService.movieDetailsSubject$ | async)?.poster_path}}" alt="">
     <div class="rows">
       <div class="line-1">
-        <div class="title">{{movie.title}}</div>
-        <div class="vote">{{movie.vote_average}}</div>
+        <div class="title">{{(movieDetService.movieDetailsSubject$ | async)?.title}}</div>
+        <div class="vote">{{(movieDetService.movieDetailsSubject$ | async)?.vote_average}}</div>
       </div>
-      <div class="tagline">{{movie.tagline}}</div>
+      <div class="tagline">{{(movieDetService.movieDetailsSubject$ | async)?.tagline}}</div>
       <div class="line-4">
-        <span>{{movie.release_date | date : "YYYY"}}</span>
-        <span class="runtime">{{movie.runtime}} min</span>
+        <span>{{(movieDetService.movieDetailsSubject$ | async)?.release_date | date : "YYYY"}}</span>
+        <span class="runtime">{{(movieDetService.movieDetailsSubject$ | async)?.runtime}} min</span>
       </div>
       <div class="overview">
-        {{movie.overview}}
+        {{(movieDetService.movieDetailsSubject$ | async)?.overview}}
       </div>
     </div>
   </div>

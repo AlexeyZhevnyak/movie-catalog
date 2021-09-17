@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {DottedMenuComponent} from './dotted-menu.component';
+import {MovieCardMenuComponent} from './movie-card-menu.component';
 
 describe('DottedMenuComponent', () => {
-  let component: DottedMenuComponent;
-  let fixture: ComponentFixture<DottedMenuComponent>;
+  let component: MovieCardMenuComponent;
+  let fixture: ComponentFixture<MovieCardMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DottedMenuComponent ]
+      declarations: [MovieCardMenuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DottedMenuComponent);
+    fixture = TestBed.createComponent(MovieCardMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
