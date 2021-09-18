@@ -1,4 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Movie} from "../../model/movie/movie";
 
 @Component({
   selector: 'app-movie-card-menu',
@@ -7,15 +8,14 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 })
 export class MovieCardMenuComponent {
   @ViewChild("headerBurger") headerBurger !: ElementRef;
-
   @ViewChild("headerMenu") headerMenu !: ElementRef;
   @ViewChild("header") header !: ElementRef;
   @ViewChild("wrapper") wrapper !: ElementRef;
   isMark: boolean = false;
+  @Input() movie!: Movie;
 
   constructor() {
   }
-
 
 
   change() {
