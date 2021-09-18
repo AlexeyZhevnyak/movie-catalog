@@ -44,4 +44,11 @@ export class MoviesService {
   findMovie(title: string) {
     this.movies = this.movies.filter(e => e.title === title);
   }
+
+  deleteMovie(movie: Movie) {
+    this.http.delete("http://localhost:4000/movies/" + movie.id).subscribe(
+      e => console.log(e)
+    );
+    this.movies.splice(this.movies.indexOf(movie), 1)
+  }
 }

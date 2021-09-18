@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-movie-card-menu',
@@ -12,10 +12,10 @@ export class MovieCardMenuComponent {
   @ViewChild("header") header !: ElementRef;
   @ViewChild("wrapper") wrapper !: ElementRef;
   isMark: boolean = false;
+  @Output() deleteClickEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {
   }
-
 
 
   change() {
@@ -35,5 +35,9 @@ export class MovieCardMenuComponent {
     this.headerMenu.nativeElement.style.display = 'none';
     this.headerBurger.nativeElement.style.display = 'block'
     this.headerBurger.nativeElement.classList.remove('active')
+  }
+
+  sendDeleteClick() {
+    this.deleteClickEmitter.emit(true);
   }
 }

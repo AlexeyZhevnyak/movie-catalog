@@ -7,14 +7,18 @@ import {Movie} from "../../model/movie/movie";
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent {
-
   @Input() movie!: Movie;
   @Output() movieEmitter = new EventEmitter<Movie>();
+  @Output() showDeleteEmitter = new EventEmitter<boolean>();
 
   constructor() {
   }
 
   sendMovie() {
     this.movieEmitter.emit(this.movie);
+  }
+
+  sendSignToShowDialog(decision: boolean) {
+    this.showDeleteEmitter.emit(decision);
   }
 }
