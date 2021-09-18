@@ -14,6 +14,7 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
 
 import {MovieCardMenuComponent} from './components/dotted-menu/movie-card-menu.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {HomeComponent} from './components/home/home.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     FindMovieComponent,
     FilterSortMenuComponent,
     MovieDetailsComponent,
-    MovieCardMenuComponent
+    MovieCardMenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
