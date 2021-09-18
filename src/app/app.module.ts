@@ -15,6 +15,8 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
 import {MovieCardMenuComponent} from './components/dotted-menu/movie-card-menu.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HomeComponent} from './components/home/home.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ModalDialogComponent} from './components/modal-dialog/modal-dialog.component';
 
 
 @NgModule({
@@ -26,14 +28,16 @@ import {HomeComponent} from './components/home/home.component';
     FilterSortMenuComponent,
     MovieDetailsComponent,
     MovieCardMenuComponent,
-    HomeComponent
+    HomeComponent,
+    ModalDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

@@ -18,11 +18,7 @@ export class MoviesService {
   }
 
   private refreshMovies(obs: Observable<MoviesDto>) {
-    obs.subscribe(e => this.movies = e.data.map(
-      element => {
-        element.release_date = new Date(element.release_date).getTime();
-        return element;
-      }))
+    obs.subscribe(e => this.movies = e.data)
   }
 
   get moviesObs(): Observable<Movie[]> {
@@ -30,17 +26,16 @@ export class MoviesService {
   }
 
   sortMovies(field: string): void {
-    this.movies.sort((a: any, b: any) => a[field] - b[field])
+    if (field === "release_date") {
+      this.movies.sort((a: any, b: any) => new Date(a[field]).getTime() - new Date(b[field]).getTime())
+      return;
+    }
+    this.movies.sort((a: any, b: any) => a[field] - b[field]);
   }
 
   filterMovies(filter: string): void {
     this.movieDTOObs.subscribe(e => {
-      this.movies = e.data
-        .map(
-          element => {
-            element.release_date = new Date(element.release_date).getTime();
-            return element;
-          });
+      this.movies = e.data;
       if (filter !== "All")
         this.movies = this.movies.filter(e => e.genres.indexOf(filter) >= 0);
     })

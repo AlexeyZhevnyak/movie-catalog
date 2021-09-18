@@ -4,7 +4,7 @@ export class Movie {
   public tagline: string = "";
   public vote_average: number = 0
   public vote_count: number = 0;
-  public release_date: number;
+  public release_date: string;
   public poster_path: string = "";
   public overview: keyof String;
   public budget: number = 0;
@@ -19,7 +19,7 @@ export class Movie {
     this.tagline = tagline;
     this.vote_average = vote_average;
     this.vote_count = vote_count;
-    this.release_date = new Date(release_date).getTime();
+    this.release_date = release_date
     this.poster_path = poster_path;
     this.overview = overview;
     this.budget = budget;

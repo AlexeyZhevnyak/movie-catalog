@@ -1,8 +1,16 @@
-.film-cards{
+.film-cards {
   display: flex;
   flex-wrap: wrap;
 }
 
-.after-count-text{
+.after-count-text {
   font-weight: 100;
 }
+
+app-modal-dialog {
+  position: fixed;
+  z-index: 40;
+  left: 35em;
+  top: 20em;
+}
+

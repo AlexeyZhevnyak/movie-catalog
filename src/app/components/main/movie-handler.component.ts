@@ -15,6 +15,7 @@ import {MovieDetailsService} from "../../services/movieDetails/movie-details.ser
 export class MovieHandlerComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
+  public isVisible: boolean = false;
 
   constructor(public moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService,
               private headerSwap: HeaderSwapService, private movieDetails: MovieDetailsService) {
@@ -41,5 +42,9 @@ export class MovieHandlerComponent implements OnInit {
 
   swapHeader() {
     this.headerSwap.swapHeaderCondition$.next(false);
+  }
+
+  handleConfirm(decision: boolean) {
+
   }
 }
