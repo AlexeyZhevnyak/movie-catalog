@@ -4,6 +4,7 @@ import {MoviesDto} from "../../model/movies-dto";
 import {Observable} from "rxjs";
 import {Movie} from "../../model/movie/movie";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,16 +14,8 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {
     this.movieDTOObs = this.http.get<MoviesDto>("http://localhost:4000/movies?limit=11");
-    this.refreshMovies(this.movieDTOObs);
+    this.movieDTOObs.subscribe(e => this.movies = e.data)
 
-  }
-
-  private refreshMovies(obs: Observable<MoviesDto>) {
-    obs.subscribe(e => this.movies = e.data.map(
-      element => {
-        element.release_date = new Date(element.release_date).getTime();
-        return element;
-      }))
   }
 
   get moviesObs(): Observable<Movie[]> {
@@ -30,17 +23,16 @@ export class MoviesService {
   }
 
   sortMovies(field: string): void {
+    if (field === "release_date") {
+      this.movies.sort((a: any, b: any) => new Date(a[field]).getTime() - new Date(b[field]).getTime())
+      return;
+    }
     this.movies.sort((a: any, b: any) => a[field] - b[field])
   }
 
   filterMovies(filter: string): void {
     this.movieDTOObs.subscribe(e => {
-      this.movies = e.data
-        .map(
-          element => {
-            element.release_date = new Date(element.release_date).getTime();
-            return element;
-          });
+      this.movies = e.data;
       if (filter !== "All")
         this.movies = this.movies.filter(e => e.genres.indexOf(filter) >= 0);
     })
@@ -48,5 +40,16 @@ export class MoviesService {
 
   findMovie(title: string) {
     this.movies = this.movies.filter(e => e.title === title);
+  }
+
+  editMovie(movie: Movie) {
+    this.http.put("http://localhost:4000/movies", movie).subscribe(
+      e => console.log(e)
+    )
+    const movieIndex = this.movies.findIndex((m) => m.id === movie.id)
+    if (movieIndex < 0) {
+      return;
+    }
+    this.movies[movieIndex] = movie;
   }
 }
