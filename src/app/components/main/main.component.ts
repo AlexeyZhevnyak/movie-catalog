@@ -11,7 +11,6 @@ import {FindMovieService} from "../../services/findMovie/find-movie.service";
 export class MainComponent implements OnInit {
   public movies: Movie[] = [];
   public moviesToShow: Movie[] = [];
-  private movieToFind: string = "";
 
   constructor(private moviesService: MoviesService, private findService: FindMovieService) {
   }

@@ -1,3 +1,4 @@
+@import "src/app/variables";
 .menu-wrapper {
   display: flex;
   justify-content: space-between;
@@ -17,7 +18,7 @@ option{
 
 .genres div, .select-sort {
   padding: 20px;
-  z-index: 10;
+  z-index: $zIndexSortSelect;
 }
 
 .genres {

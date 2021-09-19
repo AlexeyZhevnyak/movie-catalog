@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AddMovieComponent} from "./components/add-movie/add-movie.component";
+import {AddMoviePageComponent} from "./components/add-movie/add-movie-page.component";
 import {WrapperComponent} from "./components/wrapper/wrapper.component";
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'add',
-    component: AddMovieComponent,
+    component: AddMoviePageComponent,
     pathMatch: 'full'
   }
 ];

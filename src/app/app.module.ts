@@ -14,7 +14,7 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
 
 import {DottedMenuComponent} from './components/dotted-menu/dotted-menu.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {AddMovieComponent} from './components/add-movie/add-movie.component';
+import {AddMoviePageComponent} from './components/add-movie/add-movie-page.component';
 import {WrapperComponent} from './components/wrapper/wrapper.component';
 
 
@@ -27,7 +27,7 @@ import {WrapperComponent} from './components/wrapper/wrapper.component';
     MenuComponent,
     MovieDetailsComponent,
     DottedMenuComponent,
-    AddMovieComponent,
+    AddMoviePageComponent,
     WrapperComponent
   ],
   imports: [
