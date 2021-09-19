@@ -28,6 +28,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/clipart2112419.png",
               "src/assets"
             ],
             "styles": [
@@ -103,9 +104,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "movie-catalog"
+  "defaultProject": "movie-catalog",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

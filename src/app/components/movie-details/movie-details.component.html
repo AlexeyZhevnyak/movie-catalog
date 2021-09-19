@@ -1,0 +1,25 @@
+<div class="details-wrapper1">
+  <div class="header">
+    <div class="netflix-title">
+      <span class="netflix">netflix</span>roulette
+    </div>
+    <div class="back-icon" (click)="swapToFindMovie()"></div>
+  </div>
+  <div class="details-wrapper">
+    <img src="{{(movieDetService.movieDetailsSubject$ | async)?.poster_path}}" alt="">
+    <div class="rows">
+      <div class="line-1">
+        <div class="title">{{(movieDetService.movieDetailsSubject$ | async)?.title}}</div>
+        <div class="vote">{{(movieDetService.movieDetailsSubject$ | async)?.vote_average}}</div>
+      </div>
+      <div class="tagline">{{(movieDetService.movieDetailsSubject$ | async)?.tagline}}</div>
+      <div class="line-4">
+        <span>{{(movieDetService.movieDetailsSubject$ | async)?.release_date | date : "YYYY"}}</span>
+        <span class="runtime">{{(movieDetService.movieDetailsSubject$ | async)?.runtime}} min</span>
+      </div>
+      <div class="overview">
+        {{(movieDetService.movieDetailsSubject$ | async)?.overview}}
+      </div>
+    </div>
+  </div>
+</div>

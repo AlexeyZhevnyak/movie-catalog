@@ -1,0 +1,10 @@
+<div class="genres">
+  <div *ngFor="let filter of filters" (click)="sendFilter(filter)">{{filter | uppercase}}</div>
+</div>
+<div class="select-sort">
+  <span class="sort-text">SORT BY</span>
+  <select [(ngModel)]="sortField" (click)="sendSelectOption(sortField)">
+    <option *ngFor="let item of options" [ngValue]="item.field">{{item.title | uppercase}}</option>
+  </select>
+</div>
+

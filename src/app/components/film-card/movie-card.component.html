@@ -1,0 +1,11 @@
+<div (click)="sendMovie()">
+  <app-movie-card-menu></app-movie-card-menu>
+  <img src="{{movie.poster_path}}" class="poster">
+  <div class="movie-details">
+    <div class="title-year">
+      <h3 class="movie-title">{{movie.title}}</h3>
+      <div class="year">{{movie.release_date | date:'YYYY'}}</div>
+    </div>
+    <p>{{movie.genres}}</p>
+  </div>
+</div>

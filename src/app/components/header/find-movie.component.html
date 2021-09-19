@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="line first">
+    <div class="netflix-title">
+      <span class="netflix">netflix</span>roulette
+    </div>
+    <div>
+      <button><span>+ ADD MOVIE</span></button>
+    </div>
+  </div>
+  <h1 class="find-text">FIND YOUR MOVIE</h1>
+  <div class="line third">
+    <input type="text" [(ngModel)]="movieTitle" placeholder="What do you want to watch?">
+    <button (click)="sendMovieTitle()">SEARCH</button>
+  </div>
+</div>
