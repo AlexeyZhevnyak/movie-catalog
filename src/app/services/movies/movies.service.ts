@@ -22,12 +22,12 @@ export class MoviesService {
     return new Observable<Movie[]>(e => e.next(this.movies));
   }
 
-  sortMovies(field: string): void {
+  sortMovies(field: keyof Movie): void {
     if (field === "release_date") {
-      this.movies.sort((a: any, b: any) => new Date(a[field]).getTime() - new Date(b[field]).getTime())
+      this.movies.sort((a: Movie, b: Movie) => new Date(a[field]).getTime() - new Date(b[field]).getTime())
       return;
     }
-    this.movies.sort((a: any, b: any) => a[field] - b[field])
+    this.movies.sort((a: Movie, b: Movie) => Number(a[field]) - Number(b[field]))
   }
 
   filterMovies(filter: string): void {
@@ -47,9 +47,6 @@ export class MoviesService {
       e => console.log(e)
     )
     const movieIndex = this.movies.findIndex((m) => m.id === movie.id)
-    if (movieIndex < 0) {
-      return;
-    }
     this.movies[movieIndex] = movie;
   }
 }

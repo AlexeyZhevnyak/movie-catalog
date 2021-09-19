@@ -31,7 +31,7 @@ export class MovieHandlerComponent implements OnInit {
     this.moviesService.filterMovies(filter);
   }
 
-  sortMovies(field: string) {
+  sortMovies(field: keyof Movie) {
     this.moviesService.sortMovies(field);
   }
 
