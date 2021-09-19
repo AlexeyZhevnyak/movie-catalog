@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FindMovieService} from "../../services/findMovie/find-movie.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-find-movie',
@@ -11,7 +10,8 @@ export class FindMovieComponent implements OnInit {
   public movieTitle: string = "";
 
 
-  constructor(private findService : FindMovieService, private rout : Router) { }
+  constructor(private findService: FindMovieService) {
+  }
 
   ngOnInit(): void {
   }
