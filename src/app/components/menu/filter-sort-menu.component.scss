@@ -1,3 +1,4 @@
+@import "src/app/variables";
 :host {
   display: flex;
   justify-content: space-between;
@@ -19,6 +20,7 @@ option {
 
 .genres div, .select-sort {
   padding: 20px;
+  z-index: $zIndexSortSelect;
 }
 
 .genres {
@@ -33,8 +35,4 @@ option {
 .sort-text {
   font-weight: 100;
   margin-right: 10px;
-}
-
-.select-sort {
-  z-index: 20;
 }
