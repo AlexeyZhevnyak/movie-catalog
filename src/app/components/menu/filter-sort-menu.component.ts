@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SelectOptions} from "../../services/sortFunctions/selectOptions";
+import {Movie} from "../../model/movie/movie";
 
 @Component({
   selector: 'app-filter-sort-menu',
@@ -10,8 +11,8 @@ export class FilterSortMenuComponent implements OnInit {
   @Input() filters: string[] = [];
   @Input() options: SelectOptions[] = [];
   @Output() filterEmitter = new EventEmitter<string>();
-  @Output() selectViewEmitter = new EventEmitter<string>();
-  public sortField!: string;
+  @Output() selectViewEmitter = new EventEmitter<keyof Movie>();
+  public sortField!: keyof Movie;
 
   constructor() {
   }
@@ -24,7 +25,7 @@ export class FilterSortMenuComponent implements OnInit {
     this.filterEmitter.emit(filter);
   }
 
-  sendSelectOption(selectOption: string) {
+  sendSelectOption(selectOption: keyof Movie) {
     this.selectViewEmitter.emit(selectOption);
   }
 }

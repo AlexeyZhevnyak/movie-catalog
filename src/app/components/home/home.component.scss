@@ -4,6 +4,5 @@
 }
 
 .blur {
-  // Make sure this color has an opacity of less than 1
-  backdrop-filter: blur(5px); // This be the blur
+  backdrop-filter: blur(5px);
 }

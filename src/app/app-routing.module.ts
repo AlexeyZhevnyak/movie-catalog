@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {AddMoviePageComponent} from "./components/add-movie/add-movie-page.component";
+import {EditComponent} from "./components/edit/edit.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
     path: 'add',
     component: AddMoviePageComponent,
     pathMatch: 'full'
+  },
+  {
+    path: "edit/:movie",
+    component: EditComponent,
+    pathMatch: "full"
   }
 ];
 
@@ -20,5 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

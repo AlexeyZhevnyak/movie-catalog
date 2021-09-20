@@ -6,7 +6,7 @@
   </div>
   <nav class="header-menu" #headerMenu>
     <ul class="header-list">
-      <li>
+      <li [routerLink]="['edit', movie | json]">
         <span class="header-elem">Edit</span>
       </li>
       <li>

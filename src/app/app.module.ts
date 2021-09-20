@@ -15,6 +15,7 @@ import {MovieDetailsComponent} from './components/movie-details/movie-details.co
 import {MovieCardMenuComponent} from './components/dotted-menu/movie-card-menu.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {HomeComponent} from './components/home/home.component';
+import {EditComponent} from './components/edit/edit.component';
 import {AddMoviePageComponent} from './components/add-movie/add-movie-page.component';
 
 
@@ -27,6 +28,7 @@ import {AddMoviePageComponent} from './components/add-movie/add-movie-page.compo
     FilterSortMenuComponent,
     MovieDetailsComponent,
     MovieCardMenuComponent,
+    EditComponent,
     HomeComponent,
     AddMoviePageComponent
   ],

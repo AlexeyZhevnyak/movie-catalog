@@ -8,7 +8,7 @@ import {HeaderSwapService} from "../../services/condition/header-swap.service";
 })
 export class HomeComponent {
 
-  constructor(public condService: HeaderSwapService) {
+  constructor(public headerSwapService: HeaderSwapService) {
   }
 
 
