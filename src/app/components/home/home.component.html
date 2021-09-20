@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="blur">
-    <app-find-movie *ngIf="condService.swapHeaderCondition$ | async"></app-find-movie>
-    <app-movie-details *ngIf="(condService.swapHeaderCondition$ | async) === false"></app-movie-details>
+    <app-find-movie *ngIf="headerSwapService.swapHeaderCondition$ | async"></app-find-movie>
+    <app-movie-details *ngIf="(headerSwapService.swapHeaderCondition$ | async) === false"></app-movie-details>
   </div>
 </div>
 <app-movie-cards></app-movie-cards>

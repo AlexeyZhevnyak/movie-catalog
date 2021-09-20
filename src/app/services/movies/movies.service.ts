@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {MoviesDto} from "../../model/movies-dto";
 import {Observable} from "rxjs";
 import {Movie} from "../../model/movie/movie";
+import {AddMovieDTO} from "../../model/add-movie-dto";
 
 
 @Injectable({
@@ -30,8 +31,7 @@ export class MoviesService {
     this.movies.sort((a: Movie, b: Movie) => Number(a[field]) - Number(b[field]))
   }
 
-  addMovie(movie: any): Observable<Object> {
-    console.log(movie)
+  addMovie(movie: AddMovieDTO): Observable<Object> {
     return this.http.post("http://localhost:4000/movies", movie);
   }
 
