@@ -27,7 +27,8 @@ import {AddMoviePageComponent} from './components/add-movie/add-movie-page.compo
     FilterSortMenuComponent,
     MovieDetailsComponent,
     MovieCardMenuComponent,
-    HomeComponent
+    HomeComponent,
+    AddMoviePageComponent
   ],
   imports: [
     BrowserModule,

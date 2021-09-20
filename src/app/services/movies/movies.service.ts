@@ -8,12 +8,13 @@ import {Movie} from "../../model/movie/movie";
   providedIn: 'root'
 })
 export class MoviesService {
-  private readonly _moviesDtoObs: Observable<MoviesDto> = new Observable();
   private movieDTOObs!: Observable<MoviesDto>;
   private movies: Movie[] = [];
 
   constructor(private http: HttpClient) {
     this.movieDTOObs = this.http.get<MoviesDto>("http://localhost:4000/movies?limit=11");
+    this.refreshMovies(this.movieDTOObs)
+
   }
 
   private refreshMovies(obs: Observable<MoviesDto>) {
