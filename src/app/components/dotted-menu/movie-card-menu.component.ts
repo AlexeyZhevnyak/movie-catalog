@@ -1,4 +1,5 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Movie} from "../../model/movie/movie";
 
 @Component({
   selector: 'app-movie-card-menu',
@@ -12,6 +13,7 @@ export class MovieCardMenuComponent {
   @ViewChild("wrapper") wrapper !: ElementRef;
   isMark: boolean = false;
   @Output() deleteClickEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() movie !: Movie;
 
   constructor() {
   }
