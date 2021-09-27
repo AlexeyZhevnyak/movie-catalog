@@ -1,5 +1,5 @@
 <div (click)="sendMovie()">
-  <app-movie-card-menu [movie]="movie"></app-movie-card-menu>
+  <app-movie-card-menu (deleteClickEmitter)="sendSignToShowDialog($event)"></app-movie-card-menu>
   <img src="{{movie.poster_path}}" class="poster">
   <div class="movie-details">
     <div class="title-year">

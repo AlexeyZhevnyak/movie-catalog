@@ -14,7 +14,8 @@ import {MovieDetailsService} from "../../services/movieDetails/movie-details.ser
 })
 export class MovieHandlerComponent implements OnInit {
   public movies: Movie[] = [];
-  public moviesToShow: Movie[] = [];
+  public isDialogVisible: boolean = false;
+  public clickedMovie !: Movie;
 
   constructor(public moviesService: MoviesService, private findService: FindMovieService, public genreHolder: GenresHolderService, public sortService: SortService,
               private headerSwap: HeaderSwapService, private movieDetails: MovieDetailsService) {
@@ -41,5 +42,21 @@ export class MovieHandlerComponent implements OnInit {
 
   swapHeader() {
     this.headerSwap.swapHeaderCondition$.next(false);
+  }
+
+  handleConfirm(decision: boolean) {
+    if (decision)
+      this.moviesService.deleteMovie(this.clickedMovie);
+    this.isDialogVisible = false
+
+  }
+
+  showDialog(decision: boolean) {
+    this.isDialogVisible = decision;
+  }
+
+  handleMovie(movie: Movie) {
+    this.sendMovieDetailsToHeader(movie);
+    this.clickedMovie = movie;
   }
 }
