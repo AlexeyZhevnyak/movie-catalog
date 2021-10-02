@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MovieCardComponent} from './movie-card.component';
+import {Movie} from "../../model/movie/movie";
 
 describe('FilmCardComponent', () => {
   let component: MovieCardComponent;
@@ -16,10 +17,18 @@ describe('FilmCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MovieCardComponent);
     component = fixture.componentInstance;
+    component.movie = new Movie(1, "testTitle", "testTagline", 5.6, 1000,
+      "2020-06-06", "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg", "testOverview", 6000, 10000, ["g1", "g2"],
+      120);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('test markup', () => {
+    const h3 = fixture.nativeElement.querySelector('h3.movie-title');
+    expect(h3!.textContent).toBe("testTitle");
   });
 });

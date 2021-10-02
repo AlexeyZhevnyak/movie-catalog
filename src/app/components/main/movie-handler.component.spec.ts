@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MovieHandlerComponent} from './movie-handler.component';
+import {HttpClientModule} from "@angular/common/http";
 
 describe('MainComponent', () => {
   let component: MovieHandlerComponent;
@@ -8,7 +9,8 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MovieHandlerComponent]
+      declarations: [MovieHandlerComponent],
+      imports: [HttpClientModule]
     })
       .compileComponents();
   });

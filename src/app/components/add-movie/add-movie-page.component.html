@@ -3,47 +3,48 @@
   <form method="post" #addForm>
     <div>
       <label>TITLE</label>
-      <input type="text" placeholder="Title here" [(ngModel)]="movieForAdd.title" name="title">
+      <input id="title" type="text" placeholder="Title here" [(ngModel)]="movieForAdd.title" name="title">
     </div>
     <div>
       <label>RELEASE DATE</label>
-      <input onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Select date" name="date"
+      <input id="relDate" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Select date" name="date"
              [(ngModel)]="movieForAdd.release_date">
     </div>
     <div>
       <label>MOVIE URL</label>
-      <input type="text" placeholder="Movie URL here" [(ngModel)]="movieForAdd.poster_path" name="url">
+      <input id="movUrl" type="text" placeholder="Movie URL here" [(ngModel)]="movieForAdd.poster_path" name="url">
     </div>
     <div>
       <label>GENRE</label>
-      <select name="genres" [(ngModel)]="movieForAdd.genres" multiple>
+      <select id="genres" name="genres" [(ngModel)]="movieForAdd.genres" multiple>
         <option *ngFor="let genre of genresService.genres.slice(1, genresService.genres.length)"
                 value="{{genre}}">{{genre}}</option>
       </select>
     </div>
     <div>
       <label>OVERVIEW</label>
-      <input type="text" placeholder="Overview here" [(ngModel)]="movieForAdd.overview" name="over">
+      <input id="overview" type="text" placeholder="Overview here" [(ngModel)]="movieForAdd.overview" name="over">
     </div>
     <div>
       <label>RUNTIME</label>
-      <input type="text" placeholder="Runtime here" [(ngModel)]="movieForAdd.runtime" name="run">
+      <input id="runtime" type="text" placeholder="Runtime here" [(ngModel)]="movieForAdd.runtime" name="run">
     </div>
     <div>
       <label>REVENUE</label>
-      <input type="text" placeholder="Revenue here" [(ngModel)]="movieForAdd.revenue" name="rev">
+      <input id="revenue" type="text" placeholder="Revenue here" [(ngModel)]="movieForAdd.revenue" name="rev">
     </div>
     <div>
       <label>TAGLINE</label>
-      <input type="text" placeholder="Tagline here" [(ngModel)]="movieForAdd.tagline" name="tag">
+      <input id="tagline" type="text" placeholder="Tagline here" [(ngModel)]="movieForAdd.tagline" name="tag">
     </div>
     <div>
       <label>VOTE AVERAGE</label>
-      <input type="text" placeholder="Vote average here" [(ngModel)]="movieForAdd.vote_average" name="voteA">
+      <input id="voteAv" type="text" placeholder="Vote average here" [(ngModel)]="movieForAdd.vote_average"
+             name="voteA">
     </div>
     <div>
       <label>VOTE COUNT</label>
-      <input type="text" placeholder="Vote count here" [(ngModel)]="movieForAdd.vote_count" name="voteC">
+      <input id="voteCount" type="text" placeholder="Vote count here" [(ngModel)]="movieForAdd.vote_count" name="voteC">
     </div>
     <div class="buttons">
       <button (click)="clearAll()">RESET</button>

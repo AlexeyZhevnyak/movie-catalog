@@ -2,7 +2,6 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {GenresHolderService} from "../../services/genres/genres-holder.service";
 import {MoviesService} from "../../services/movies/movies.service";
 import {AddMovieDTO} from "../../model/add-movie-dto";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-movie',
@@ -26,7 +25,8 @@ export class AddMoviePageComponent {
     vote_count: 0
   };
 
-  constructor(public genresService: GenresHolderService, private movSer: MoviesService, private router: Router) {
+  constructor(public genresService: GenresHolderService, private movSer: MoviesService) {
+
   }
 
 

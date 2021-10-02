@@ -16,7 +16,30 @@ describe('MenuComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FilterSortMenuComponent);
     component = fixture.componentInstance;
+    component.options = [
+      {
+        title: "Votes",
+        field: "vote_average"
+      },
+      {
+        title: "Release date",
+        field: "release_date"
+      },
+      {
+        title: "Budget",
+        field: "budget"
+      },
+      {
+        title: "Revenue",
+        field: "revenue"
+      },
+      {
+        title: "Runtime",
+        field: "runtime"
+      }
+    ]
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
