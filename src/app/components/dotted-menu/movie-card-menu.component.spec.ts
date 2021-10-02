@@ -34,4 +34,10 @@ describe('DottedMenuComponent', () => {
     expect(component.headerMenu.nativeElement.style.display).toBe('block');
     expect(component.header.nativeElement.style.justifyContent).toBe('flex-end');
   });
+  it('mouseOut() test', () => {
+    component.mouseOut();
+    component.isMark = false;
+    expect(component.headerMenu.nativeElement.style.display).toBe('none');
+    expect(component.headerBurger.nativeElement.style.display).toBe('block');
+  });
 });
