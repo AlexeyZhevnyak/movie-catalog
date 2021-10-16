@@ -4,16 +4,32 @@ import {EditComponent} from './edit.component';
 import {AppRoutingModule} from "../../app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {Movie} from "../../model/movie/movie";
+import {Observable} from "rxjs";
+import {MoviesService} from "../../services/movies/movies.service";
 
 describe('EditComponent', () => {
   let component: EditComponent;
   let fixture: ComponentFixture<EditComponent>;
 
+
+  let fakeMovieService = {
+    editMovie(movie: Movie) {
+      return new Observable<Object>();
+    }
+  };
+
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EditComponent],
       imports: [AppRoutingModule,
-        HttpClientModule]
+        HttpClientModule],
+      providers: [
+        {
+          provide: MoviesService,
+          useValue: fakeMovieService
+        }
+      ]
     })
       .compileComponents();
   });
@@ -29,7 +45,13 @@ describe('EditComponent', () => {
   });
 
   it('should create', () => {
-    const nativeElement = fixture.nativeElement;
     expect(component).toBeTruthy();
+  });
+
+  it('edit movie should be called', function () {
+
+    var spy = spyOn(fakeMovieService, "editMovie").and.callThrough();
+    component.submit();
+    expect(spy).toHaveBeenCalled();
   });
 });

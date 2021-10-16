@@ -26,7 +26,7 @@ export class EditComponent implements OnInit {
 
   submit() {
     this.movSer.editMovie(this.movie);
-    window.location.reload();
+    // window.location.reload();
   }
 
   clearAll() {

@@ -28,7 +28,7 @@ describe('DottedMenuComponent', () => {
   });
 
 
-  it('change() test', () => {
+  it('dotted menu transform test', () => {
     component.change();
     expect(component.isMark).toBe(true);
     expect(component.headerMenu.nativeElement.style.display).toBe('block');

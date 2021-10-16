@@ -13,7 +13,7 @@ import {MovieDetailsService} from "../../services/movieDetails/movie-details.ser
   styleUrls: ['./movie-handler.component.scss']
 })
 export class MovieHandlerComponent implements OnInit {
-  public movies: Movie[] = [];
+  // public movies: Movie[] = [];
   public isDialogVisible: boolean = false;
   public clickedMovie !: Movie;
 

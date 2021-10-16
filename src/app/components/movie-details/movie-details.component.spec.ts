@@ -29,7 +29,7 @@ describe('MovieDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('markup test', () => {
+  it('checking the correctness of movie information', () => {
     const nativeElement = fixture.nativeElement;
 
     let img = nativeElement.querySelector("img");
@@ -47,5 +47,10 @@ describe('MovieDetailsComponent', () => {
     expect(relDate.textContent).toBe("2020");
     expect(runtime.textContent).toBe('120 min');
     expect(overview.textContent).toBe("testOverview");
+  });
+
+  it('check the correctness of header swap condition', () => {
+    component.swapToFindMovie();
+    component.condition.swapHeaderCondition$.subscribe(e => expect(e).toEqual(true));
   });
 });

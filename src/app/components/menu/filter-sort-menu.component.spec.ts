@@ -45,4 +45,14 @@ describe('MenuComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+
+  it("checking the correctness of filter", () => {
+    component.sendFilter("testFilter");
+    component.filterEmitter.subscribe(e => expect(e).toEqual("testFilter"));
+  })
+
+  it("checking the correctness of selected option", () => {
+    component.sendSelectOption("runtime");
+    component.selectViewEmitter.subscribe(e => expect(e).toEqual("runtime"))
+  })
+})

@@ -28,7 +28,7 @@ describe('FilmCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('test markup', () => {
+  it('test correct view of title, year, genres and poster', () => {
     const nativeElement = fixture.nativeElement;
     const h3 = nativeElement.querySelector('h3.movie-title');
     const year = nativeElement.querySelector('div.year');
@@ -39,4 +39,14 @@ describe('FilmCardComponent', () => {
     expect(genres.textContent).toBe("g1,g2");
     expect(posterPath.src).toBe("https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg");
   });
+
+  it('check emitted movie', () => {
+    component.sendMovie()
+    component.movieEmitter.subscribe(e => expect(e).toEqual(component.movie))
+  });
+
+  it('check emitted decision to show dialog', () => {
+    component.sendSignToShowDialog(false);
+    component.showDeleteEmitter.subscribe(e => expect(e).toBe(false))
+  })
 });

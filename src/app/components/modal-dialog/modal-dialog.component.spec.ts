@@ -25,7 +25,7 @@ describe('ModalDialogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('values test', () => {
+  it('check the correctness of title and message', () => {
     const nativeElement = fixture.nativeElement;
     const title = nativeElement.querySelector('h1');
     const message = nativeElement.querySelector('p');

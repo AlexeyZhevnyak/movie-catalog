@@ -3,14 +3,29 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {AddMoviePageComponent} from './add-movie-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {MoviesService} from "../../services/movies/movies.service";
+import {AddMovieDTO} from "../../model/add-movie-dto";
+import {Observable} from "rxjs";
 
 describe('AddMovieComponent', () => {
   let component: AddMoviePageComponent;
   let fixture: ComponentFixture<AddMoviePageComponent>;
 
+  let fakeService = {
+    addMovie(movie: AddMovieDTO): Observable<Object> {
+      return new Observable<Object>();
+    }
+  };
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AddMoviePageComponent],
+      providers: [
+        {
+          provide: MoviesService,
+          useValue: fakeService
+        }
+      ],
       imports: [HttpClientModule, FormsModule]
     })
       .compileComponents();
@@ -27,7 +42,7 @@ describe('AddMovieComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('clearAll() test', () => {
+  it('clearAll(): all fields should become empty', () => {
     component.clearAll();
     const nativeElement = fixture.nativeElement;
     const title = nativeElement.querySelector('#title').value;
@@ -50,6 +65,11 @@ describe('AddMovieComponent', () => {
     expect(tagline).toBe('');
     expect(voteAv).toBe('');
     expect(voteCount).toBe('');
+  })
 
+  it("aaa", () => {
+    var spy = spyOn(fakeService, "addMovie").and.callThrough();
+    component.submit();
+    expect(spy).toHaveBeenCalledTimes(1);
   })
 });
