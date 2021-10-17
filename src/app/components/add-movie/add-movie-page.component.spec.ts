@@ -67,7 +67,7 @@ describe('AddMovieComponent', () => {
     expect(voteCount).toBe('');
   })
 
-  it("aaa", () => {
+  it("addMovie should be called", () => {
     var spy = spyOn(fakeService, "addMovie").and.callThrough();
     component.submit();
     expect(spy).toHaveBeenCalledTimes(1);
