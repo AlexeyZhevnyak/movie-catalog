@@ -2,11 +2,14 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {MovieCardComponent} from './movie-card.component';
 import {Movie} from "../../model/movie/movie";
+import {first} from "rxjs/operators";
+import {By} from "@angular/platform-browser";
 
 describe('FilmCardComponent', () => {
   let component: MovieCardComponent;
   let fixture: ComponentFixture<MovieCardComponent>;
-
+  let allComponent: any;
+  let cardMenuComponent: any;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MovieCardComponent]
@@ -21,6 +24,9 @@ describe('FilmCardComponent', () => {
       "2020-06-06", "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg",
       "testOverview", 6000, 10000, ["g1", "g2"],
       120);
+
+    allComponent = fixture.debugElement.query(By.css('.outer'));
+    cardMenuComponent = fixture.debugElement.query(By.css('app-movie-card-menu'));
     fixture.detectChanges();
   });
 
@@ -41,12 +47,25 @@ describe('FilmCardComponent', () => {
   });
 
   it('check emitted movie', () => {
-    component.sendMovie()
-    component.movieEmitter.subscribe(e => expect(e).toEqual(component.movie))
+    let value!: Movie;
+    spyOn(component, "sendMovie").and.callThrough();
+    component.movieEmitter.pipe(first())
+      .subscribe(e => value = e);
+    allComponent.triggerEventHandler('click', null);
+    expect(component.sendMovie).toHaveBeenCalled();
+    expect(value).toEqual(new Movie(1, "testTitle", "testTagline", 5.6, 1000,
+      "2020-06-06", "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg",
+      "testOverview", 6000, 10000, ["g1", "g2"],
+      120))
   });
 
   it('check emitted decision to show dialog', () => {
-    component.sendSignToShowDialog(false);
-    component.showDeleteEmitter.subscribe(e => expect(e).toBe(false))
+    let value!: boolean;
+    spyOn(component, "sendSignToShowDialog").and.callThrough();
+    component.showDeleteEmitter.pipe(first())
+      .subscribe(e => value = e);
+    cardMenuComponent.triggerEventHandler('deleteClickEmitter', null);
+
+    expect(component.sendSignToShowDialog).toHaveBeenCalled();
   })
 });
