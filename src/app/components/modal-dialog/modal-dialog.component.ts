@@ -15,7 +15,6 @@ export class ModalDialogComponent {
   constructor() {
   }
 
-
   sendDecision(decision: boolean) {
     this.decisionEmitter.emit(decision);
   }

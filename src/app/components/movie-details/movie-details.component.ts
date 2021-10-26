@@ -9,7 +9,7 @@ import {HeaderSwapService} from "../../services/condition/header-swap.service";
 })
 export class MovieDetailsComponent {
 
-  constructor(public movieDetService: MovieDetailsService, private condition: HeaderSwapService) {
+  constructor(public movieDetService: MovieDetailsService, public condition: HeaderSwapService) {
   }
 
   swapToFindMovie() {

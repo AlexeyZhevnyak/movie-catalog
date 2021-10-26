@@ -3,46 +3,46 @@
   <form method="post" #editForm>
     <div>
       <label>TITLE</label>
-      <input type="text" placeholder="Title here" [(ngModel)]="movie.title" name="title">
+      <input id="title" type="text" placeholder="Title here" [(ngModel)]="movie.title" name="title">
     </div>
     <div>
       <label>RELEASE DATE</label>
-      <input onfocus="(this.type='date')" onblur="(this.type='text')" name="date"
+      <input id="relDate" onfocus="(this.type='date')" onblur="(this.type='text')" name="date"
              [ngModel]="movie.release_date | date" (ngModelChange)="movie.release_date = $event.target.value">
     </div>
     <div>
       <label>MOVIE URL</label>
-      <input type="text" placeholder="Movie URL here" [(ngModel)]="movie.poster_path" name="url">
+      <input id="movUrl" type="text" placeholder="Movie URL here" [(ngModel)]="movie.poster_path" name="url">
     </div>
     <div>
       <label>GENRE</label>
-      <select multiple [(ngModel)]="movie.genres" name="genres">
+      <select id="genres" multiple [(ngModel)]="movie.genres" name="genres">
         <option *ngFor="let genre of genresService.genres.slice(1, genresService.genres.length)">{{genre}}</option>
       </select>
     </div>
     <div>
       <label>OVERVIEW</label>
-      <input type="text" placeholder="Overview here" [(ngModel)]="movie.overview" name="over">
+      <input id="overview" type="text" placeholder="Overview here" [(ngModel)]="movie.overview" name="over">
     </div>
     <div>
       <label>RUNTIME</label>
-      <input type="text" placeholder="Runtime here" [(ngModel)]="movie.runtime" name="run">
+      <input id="runtime" type="text" placeholder="Runtime here" [(ngModel)]="movie.runtime" name="run">
     </div>
     <div>
       <label>REVENUE</label>
-      <input type="text" placeholder="Revenue here" [(ngModel)]="movie.revenue" name="rev">
+      <input id="revenue" type="text" placeholder="Revenue here" [(ngModel)]="movie.revenue" name="rev">
     </div>
     <div>
       <label>TAGLINE</label>
-      <input type="text" placeholder="Tagline here" [(ngModel)]="movie.tagline" name="tag">
+      <input id="tagline" type="text" placeholder="Tagline here" [(ngModel)]="movie.tagline" name="tag">
     </div>
     <div>
       <label>VOTE AVERAGE</label>
-      <input type="text" placeholder="Vote average here" [(ngModel)]="movie.vote_average" name="voteA">
+      <input id="voteAv" type="text" placeholder="Vote average here" [(ngModel)]="movie.vote_average" name="voteA">
     </div>
     <div>
       <label>VOTE COUNT</label>
-      <input type="text" placeholder="Vote count here" [(ngModel)]="movie.vote_count" name="voteC">
+      <input id="voteCount" type="text" placeholder="Vote count here" [(ngModel)]="movie.vote_count" name="voteC">
     </div>
     <div class="buttons">
       <button (click)="clearAll()">RESET</button>

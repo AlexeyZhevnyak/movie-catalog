@@ -1,11 +1,12 @@
-<div (click)="sendMovie()">
-  <app-movie-card-menu (deleteClickEmitter)="sendSignToShowDialog($event)" [movie]="movie"></app-movie-card-menu>
+<div class="outer" (click)="sendMovie()">
+  <app-movie-card-menu (deleteClickEmitter)="sendSignToShowDialog($event)" [movie]="movie"
+                       class="testS"></app-movie-card-menu>
   <img src="{{movie.poster_path}}" class="poster">
   <div class="movie-details">
     <div class="title-year">
       <h3 class="movie-title">{{movie.title}}</h3>
       <div class="year">{{movie.release_date | date:'YYYY'}}</div>
     </div>
-    <p>{{movie.genres}}</p>
+    <p id="genres">{{movie.genres}}</p>
   </div>
 </div>
