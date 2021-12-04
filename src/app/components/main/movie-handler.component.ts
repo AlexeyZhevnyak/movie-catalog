@@ -25,7 +25,6 @@ export class MovieHandlerComponent implements OnInit {
     this.findService.findedMovieTitle$.subscribe(movieTitle => {
       this.moviesService.findMovie(movieTitle);
     });
-
   }
 
   filterMovies(filter: string): void {
@@ -41,6 +40,9 @@ export class MovieHandlerComponent implements OnInit {
   }
 
   swapHeader() {
+    var elementById = document.getElementById('start');
+    if (elementById !== null)
+      elementById.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
     this.headerSwap.swapHeaderCondition$.next(false);
   }
 

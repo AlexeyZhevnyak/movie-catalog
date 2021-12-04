@@ -6,7 +6,9 @@
 <div class="film-cards">
   <app-movie-card *ngFor="let movie of (moviesService.moviesObs| async)" [movie]="movie"
                   (movieEmitter)="handleMovie($event)"
-                  (click)="swapHeader()" (showDeleteEmitter)="showDialog($event)"></app-movie-card>
+                  (click)="swapHeader()" (showDeleteEmitter)="showDialog($event)">
+
+  </app-movie-card>
 </div>
 <app-modal-dialog *ngIf="isDialogVisible" (decisionEmitter)="handleConfirm($event)" title="DELETE MOVIE"
                   message="Are you sure you want to delete this movie?"></app-modal-dialog>

@@ -37,7 +37,7 @@ export class AddMoviePageComponent {
     this.movieForAdd.revenue = Number(this.movieForAdd.revenue);
     this.movSer.addMovie(this.movieForAdd).subscribe(e =>
       console.log(e));
-    // window.location.replace("/");
+    window.location.replace("/");
 
   }
 

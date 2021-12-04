@@ -25,8 +25,9 @@ export class EditComponent implements OnInit {
   }
 
   submit() {
+    this.movie.runtime = Number(this.movie.runtime)
     this.movSer.editMovie(this.movie);
-    // window.location.reload();
+    window.location.replace("/");
   }
 
   clearAll() {
