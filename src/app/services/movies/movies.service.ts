@@ -14,7 +14,7 @@ export class MoviesService {
   private _movies: Movie[] = [];
 
   constructor(private http: HttpClient) {
-    this.movieDTOObs = this.http.get<MoviesDto>("http://localhost:4000/movies?limit=11");
+    this.movieDTOObs = this.http.get<MoviesDto>("http://localhost:4000/movies?limit=12");
     this.movieDTOObs.subscribe(e => this._movies = e.data)
 
   }
@@ -33,7 +33,7 @@ export class MoviesService {
       this._movies.sort((a: Movie, b: Movie) => new Date(a[field]).getTime() - new Date(b[field]).getTime())
       return;
     }
-    this._movies.sort((a: Movie, b: Movie) => Number(a[field]) - Number(b[field]))
+    this._movies.sort((a: Movie, b: Movie) => Number(b[field]) - Number(a[field]))
   }
 
   addMovie(movie: AddMovieDTO): Observable<Object> {

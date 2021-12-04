@@ -39,12 +39,12 @@ export class MovieHandlerComponent implements OnInit {
     this.movieDetails.movieDetailsSubject$.next(movie);
   }
 
-  swapHeader() {
-    var elementById = document.getElementById('start');
-    if (elementById !== null)
-      elementById.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
-    this.headerSwap.swapHeaderCondition$.next(false);
-  }
+  // swapHeader() {
+  //   var elementById = document.getElementById('start');
+  //   if (elementById !== null)
+  //     elementById.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+  //   this.headerSwap.swapHeaderCondition$.next(false);
+  // }
 
   handleConfirm(decision: boolean) {
     if (decision)

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Movie} from "../../model/movie/movie";
+import {HeaderSwapService} from "../../services/condition/header-swap.service";
 
 @Component({
   selector: 'app-movie-card',
@@ -11,7 +12,7 @@ export class MovieCardComponent {
   @Output() movieEmitter = new EventEmitter<Movie>();
   @Output() showDeleteEmitter = new EventEmitter<boolean>();
 
-  constructor() {
+  constructor(private headerSwap: HeaderSwapService) {
   }
 
   sendMovie() {
@@ -20,5 +21,12 @@ export class MovieCardComponent {
 
   sendSignToShowDialog(decision: boolean) {
     this.showDeleteEmitter.emit(decision);
+  }
+
+  swapHeader() {
+    var elementById = document.getElementById('start');
+    if (elementById !== null)
+      elementById.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
+    this.headerSwap.swapHeaderCondition$.next(false);
   }
 }

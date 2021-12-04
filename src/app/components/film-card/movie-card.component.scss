@@ -29,14 +29,17 @@
 
 .movie-title {
   font-weight: 300;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 app-movie-card-menu {
   visibility: hidden;
   position: absolute;
   background-color: rgb(23, 23, 32);
-  margin-left: 220px;
-  margin-top: 0px;
+  margin-left: 215px;
+  margin-top: 7px;
   border-radius: 15px;
 
 }
